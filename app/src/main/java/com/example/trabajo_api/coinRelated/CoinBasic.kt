@@ -1,4 +1,4 @@
-package com.example.trabajo_api
+package com.example.trabajo_api.coinRelated
 
 import com.google.gson.annotations.SerializedName
 
@@ -10,3 +10,4 @@ data class CoinBasic(
     @SerializedName("is_active")var active: Boolean
 
 )
+/*"btc-btc","bitcoin","btc",false,true*/

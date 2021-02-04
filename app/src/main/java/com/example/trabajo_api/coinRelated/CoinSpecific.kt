@@ -1,4 +1,4 @@
-package com.example.trabajo_api
+package com.example.trabajo_api.coinRelated
 
 import com.google.gson.annotations.SerializedName
 

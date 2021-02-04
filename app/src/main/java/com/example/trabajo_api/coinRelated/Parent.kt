@@ -1,4 +1,4 @@
-package com.example.trabajo_api
+package com.example.trabajo_api.coinRelated
 
 data class Parent(
     var id: String,
