@@ -7,6 +7,10 @@ import android.widget.LinearLayout
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.trabajo_api.databinding.ActivityMainBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding : ActivityMainBinding
@@ -22,7 +26,9 @@ class MainActivity : AppCompatActivity() {
 
         createRecyclerView()
 
-
+        GlobalScope.launch (Dispatchers.IO){
+            val resultado = DownloaderManager.downloadData()
+        }
     }
 
     fun createRecyclerView(){
