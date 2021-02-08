@@ -2,8 +2,6 @@ package com.example.trabajo_api
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.LinearLayout
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.trabajo_api.databinding.ActivityMainBinding
@@ -27,7 +25,11 @@ class MainActivity : AppCompatActivity() {
         createRecyclerView()
 
         GlobalScope.launch (Dispatchers.IO){
-            val resultado = DownloaderManager.downloadData()
+            val resultado = model.getResults().await()
+            withContext(Dispatchers.Main){
+                model.changeLoading(binding.root)
+            }
+            adapter.setCoinList(resultado)
         }
     }
 

@@ -5,7 +5,8 @@
     android:background="@android:color/holo_orange_dark"
     android:orientation="horizontal"
     android:gravity="center_vertical"
-    android:padding="10dp">
+    android:padding="10dp"
+    android:layout_marginTop="10dp">
 
     <TextView
         android:id="@+id/tv_coin_id"
@@ -13,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="id Moneda"
-        android:textSize="30sp" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/tv_coin_name"
@@ -21,5 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Nombre Moneda"
-        android:textSize="30sp" />
+        android:textSize="20sp" />
+
+    
 </LinearLayout>

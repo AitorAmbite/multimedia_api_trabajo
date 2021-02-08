@@ -5,10 +5,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.trabajo_api.coinRelated.CoinBasic
 import com.example.trabajo_api.databinding.CoinItemBinding
+import kotlinx.coroutines.Deferred
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class CoinAdapter (): RecyclerView.Adapter<CoinAdapter.coinAdapterViewHolder>(){
 
-    var coinList = mutableListOf<CoinBasic>(CoinBasic("btc-btc","bitcoin","btc",false,true))
+    var coinList : List<CoinBasic>? = null
 
     class coinAdapterViewHolder(var view: CoinItemBinding): RecyclerView.ViewHolder(view.root)
 
@@ -26,6 +29,16 @@ class CoinAdapter (): RecyclerView.Adapter<CoinAdapter.coinAdapterViewHolder>(){
     }
 
     override fun getItemCount(): Int {
-        return coinList.size
+        coinList?.let {
+            return it.size
+        }
+        return 0
+    }
+
+    suspend fun setCoinList(lista: List<CoinBasic>?){
+        coinList = lista
+        withContext(Dispatchers.Main){
+            notifyDataSetChanged()
+        }
     }
 }
