@@ -1,9 +1,10 @@
-package com.example.trabajo_api
+package com.example.trabajo_api.Main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.trabajo_api.CoinAdapter
 import com.example.trabajo_api.databinding.ActivityMainBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
